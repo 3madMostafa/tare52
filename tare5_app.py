@@ -5,7 +5,7 @@ import re
 import torch
 
 # Load the CSV data (Questions and Answers)
-df = pd.read_csv('C:\\Users\\Administrator\\Downloads\\cleaned_output_questions (1).csv')
+df = pd.read_csv('cleaned_output_questions (1).csv')
 
 # Load a more powerful multilingual sentence transformer model
 model = SentenceTransformer('paraphrase-multilingual-mpnet-base-v2')
