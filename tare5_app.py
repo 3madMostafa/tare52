@@ -5,18 +5,15 @@ import re
 import torch
 
 # Load the CSV data (Questions and Answers)
-df = pd.read_csv('cleaned_output_questions (1).csv')
-# Load a more powerful multilingual sentence transformer model
-model = SentenceTransformer('paraphrase-multilingual-mpnet-base-v2')
+df = pd.read_csv('cleaned_output_questions.csv')
 
-# Ensure the model runs on GPU if available
-device = 'cuda' if torch.cuda.is_available() else 'cpu'
-model.to(device)
+# Load a smaller sentence transformer model to reduce resource usage
+model = SentenceTransformer('paraphrase-MiniLM-L6-v2')  # You can switch models based on your use case
 
 # Convert the dataset questions to a list
 dataset_questions = df['question'].tolist()
 
-# Compute embeddings for all questions in the dataset (this is missing in the previous code)
+# Compute embeddings for all questions in the dataset
 question_embeddings = model.encode(dataset_questions, convert_to_tensor=True)
 
 # Preprocess the question to handle typographical differences and normalization
@@ -43,11 +40,11 @@ def find_most_similar_question(new_question, threshold=0.8):
     most_similar_score = cosine_scores[0, most_similar_idx].item()
 
     # Print the similarity score for debugging purposes
-    print(f"Similarity score: {most_similar_score}")
+    st.write(f"Similarity score: {most_similar_score}")
 
     # Print the most similar question for context
     most_similar_question = dataset_questions[most_similar_idx]
-    print(f"Most similar question: {most_similar_question}")
+    st.write(f"Most similar question: {most_similar_question}")
 
     # Check if the similarity score is above the threshold
     if most_similar_score >= threshold:
