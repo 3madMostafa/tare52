@@ -1,13 +1,13 @@
-from langchain.chains import RetrievalQA
-from langchain.callbacks.streaming_stdout import StreamingStdOutCallbackHandler
-from langchain.callbacks.manager import CallbackManager
-from langchain.llms import Ollama
-from langchain.embeddings.ollama import OllamaEmbeddings
-from langchain.vectorstores import Chroma
-from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain.document_loaders import PyPDFLoader
-from langchain.prompts import PromptTemplate
-from langchain.memory import ConversationBufferMemory
+from langchain-community.chains import RetrievalQA
+from langchain-community.callbacks.streaming_stdout import StreamingStdOutCallbackHandler
+from langchain-community.callbacks.manager import CallbackManager
+from langchain-community.llms import Ollama
+from langchain-community.embeddings.ollama import OllamaEmbeddings
+from langchain-community.vectorstores import Chroma
+from langchain-community.text_splitter import RecursiveCharacterTextSplitter
+from langchain-community.document_loaders import PyPDFLoader
+from langchain-community.prompts import PromptTemplate
+from langchain-community.memory import ConversationBufferMemory
 import streamlit as st
 import os
 import time
