@@ -1,5 +1,5 @@
 pypdf==4.0.2
-langchain==0.1.9
+langchain-community==0.1.9
 ollama==0.1.6
 jupyterlab==4.1.2
 chromadb==0.4.23
