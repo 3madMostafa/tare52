@@ -4,7 +4,6 @@ langchain_community
 ollama
 jupyterlab
 chromadb
-openai
 tiktoken
 PyPDF2
 PyMuPDF
