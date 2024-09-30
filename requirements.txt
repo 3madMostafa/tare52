@@ -1,5 +1,5 @@
 pypdf
-langchain-community
+langchain
 ollama
 jupyterlab
 chromadb
