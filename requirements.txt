@@ -1,5 +1,6 @@
 pypdf
 langchain
+langchain_community
 ollama
 jupyterlab
 chromadb
